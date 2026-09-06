@@ -1,17 +1,17 @@
 {
-  "name": "bristol-os",
+  "name": "underwriter-os",
   "owner": {
     "name": "Fusion Data Company",
     "url": "https://github.com/Fusion-Data-Company"
   },
   "metadata": {
-    "description": "Bristol OS — research, market & site intelligence, investor sourcing, and an auto-built CLAUDE.md for Bristol Development Group.",
+    "description": "Underwriter OS — research, market & site intelligence, investor sourcing, and an auto-built CLAUDE.md for institutional real-estate teams.",
     "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "bristol-os",
-      "source": "./plugins/bristol-os",
+      "name": "underwriter-os",
+      "source": "./plugins/underwriter-os",
       "description": "Multifamily real estate research teammate: deep research, site selection, market & comp analysis, investor & owner sourcing, underwriting research, deal memos, and pipeline tracking.",
       "version": "1.0.0"
     }

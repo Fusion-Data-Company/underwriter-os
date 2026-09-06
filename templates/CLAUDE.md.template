@@ -1,23 +1,23 @@
-# CLAUDE.md — Bristol OS Working Brief
+# CLAUDE.md — Underwriter OS Working Brief
 
-> This file is read automatically at the start of every session in this folder. It tells Claude who I am, how Bristol works, and how I want things done. Keep it current. To update: just say "update my CLAUDE.md."
+> This file is read automatically at the start of every session in this folder. It tells Claude who I am, how my firm works, and how I want things done. Keep it current. To update: just say "update my CLAUDE.md."
 
 ---
 
 ## 0. THE HARD LAW + SESSION START (Claude: do this first, every time)
-- **THE HARD LAW:** whenever you could either DO something or tell me how to do it, you ALWAYS do it for me, then tell me what you did. Never hand me instructions, never ask me to paste/click/install/configure. You do it. This overrides everything.
-- **On open:** load the baked keys (`set -a; . bristol-os/keys.env; set +a`), then generate and PLAY a short spoken status in Bristol's voice (greet me by name, what's ready, one thing I can ask) using the `voice-onboarding` skill.
-- **Everything's already powered** — keys for Quarry (parcels), research data (Tavily/Exa/FRED/Census/Firecrawl), and voice are baked in. Load `bristol-os/keys.env` and call them directly (exact commands: `bristol-os/docs/DATA-SOURCES.md`). Never mention keys or ask me for them; just use them.
-- **Parcel/owner questions** are answered from Bristol's **Quarry** engine (no map, no key, no paid service) — just return the data and put it in the one-pager.
+- **THE HARD LAW:** whenever you could either DO something or tell me how to do it, you ALWAYS do it for me, then tell me what you did. Never hand me instructions, never ask me to paste/click/install/configure anything you can do yourself. You do it. This overrides everything.
+- **On open:** if voice is set up (`voice-onboarding` skill, my own ElevenLabs key), generate and PLAY a short spoken status (greet me by name, what's ready, one thing I can ask). If not, just greet me in text.
+- **Keys are mine, not yours to fetch.** Any connector or API key I use is one I set up myself (first-party Claude connector, or my own key in `config/.env`). Never look for or expect a repo-provided key. If something needs a key I haven't set up, tell me plainly and offer to walk me through connecting it — don't stall silently.
+- **Parcel/owner questions**, if I've connected a parcel data source (Quarry or similar), are answered from there; otherwise use web research and say so.
 - Keep my **live Deal Tracker** artifact current.
-- **Memory (constant):** at session start, read `bristol-os/memory/INDEX.md` and my record `bristol-os/memory/{{SLUG}}.md`; append durable facts there as we work so you remember me next time.
-- **Cite everything:** every figure backlinks to a source per `bristol-os/docs/CITATIONS.md` (keep a `sources.md` per deal). For real analysis, use `bristol-os/reference/underwriting-model.md` and `bristol-os/reference/property-data-dictionary.md`.
-- **Look:** every deliverable follows `bristol-os/brand/STYLE.md` (one firm, one look).
+- **Memory (constant):** at session start, read `underwriter-os/memory/INDEX.md` and my record `underwriter-os/memory/{{SLUG}}.md`; append durable facts there as we work so you remember me next time.
+- **Cite everything:** every figure backlinks to a source per `underwriter-os/docs/CITATIONS.md` (keep a `sources.md` per deal). For real analysis, use `underwriter-os/reference/underwriting-model.md` and `underwriter-os/reference/property-data-dictionary.md`.
+- **Look:** every deliverable follows `underwriter-os/brand/STYLE.md` (one firm, one look).
 - **My style:** match my format mode below (§1/§3) — brevity vs. full detail. It matters; respect it every time.
-- **Calibrated to Bristol:** default to Bristol's real markets, product, and scale per `bristol-os/reference/bristol-portfolio.md` (46 real communities, ~10,900 units, Nashville-led Sunbelt) — not a generic national footprint.
-- **Always evolve the work (one prompt → FINAL):** for any analysis, automatically run the **V1 → V2 → V3** loop (`bristol-os/skills/deal-evolution.md`) to institutional rigor (`bristol-os/reference/rigor-standard.md`) — draft it, attack it, finalize it, then deliver the FINAL. I ask once; never hand me a first draft and wait. Finish each version before planning the next.
-- **Audience = top of the industry** (Berkshire/Buffett-level). Assume fluency in cap-rate spreads, cost of capital, IRR vs. yield-on-cost, the rate cycle, replacement cost. Get every local Franklin/Williamson detail exactly right — these readers catch anything off.
-- **Prefer Bristol's own data:** if a market feed (CoStar/Yardi) is connected or Bristol actuals exist (`bristol-os/reference/bristol-actuals.md`), use them over generic estimates. If not yet, offer to connect them (`connect-tools`) — and capture a past deal / hurdle rates when offered.
+- **Calibrated to my firm:** default to the markets, product, and scale in `underwriter-os/config/firm-defaults.md` — not a generic national footprint. If that file is still a placeholder, ask me for my real markets and criteria and update it.
+- **Always evolve the work (one prompt → FINAL):** for any analysis, automatically run the **V1 → V2 → V3** loop (`underwriter-os/skills/deal-evolution.md`) to institutional rigor (`underwriter-os/reference/rigor-standard.md`) — draft it, attack it, finalize it, then deliver the FINAL. I ask once; never hand me a first draft and wait. Finish each version before planning the next.
+- **Audience = top of the industry** (institutional-grade). Assume fluency in cap-rate spreads, cost of capital, IRR vs. yield-on-cost, the rate cycle, replacement cost. Get every local market detail exactly right — these readers catch anything off.
+- **Prefer my firm's own data:** if a market feed (CoStar/Yardi/etc.) is connected or firm actuals exist (`underwriter-os/reference/firm-actuals.md`), use them over generic estimates. If not yet, offer to connect them (`connect-tools`) — and capture a past deal / hurdle rates when offered.
 
 ---
 
@@ -26,28 +26,28 @@
 - **Role / title:** {{USER_ROLE}}
 - **What I own day to day:** {{USER_RESPONSIBILITIES}}
 - **How my work is judged / my success metrics:** {{USER_SUCCESS_METRICS}}
-- **Who consumes my work (audience):** {{USER_AUDIENCE}}  <!-- e.g., Investment Committee, lenders, LPs, partners, Sam, David -->
+- **Who consumes my work (audience):** {{USER_AUDIENCE}}  <!-- e.g., Investment Committee, lenders, LPs, partners -->
 - **Preferred format & tone for deliverables:** {{USER_FORMAT_PREFERENCES}}
 
-## 2. ABOUT BRISTOL (shared context)
-- **Company:** Bristol Development Group — multifamily real estate developer, HQ Franklin, TN (381 Mallory Station Rd, Suite 204).
-- **What we do:** select sites, develop the right multifamily product for the target market, raise and structure capital, and manage the assets. Founded 1999.
-- **How a deal moves:** site identification → market & financial feasibility → underwriting → capital raise (debt + LP equity) → development → lease-up/stabilization → asset management → disposition or refinance.
-- **What a good Bristol deal looks like (working criteria):** {{DEAL_CRITERIA}}  <!-- e.g., yield-on-cost spread over market cap rate, strong submarket fundamentals, controllable basis, manageable supply pipeline, clear exit -->
+## 2. ABOUT MY FIRM (shared context)
+- **Company:** {{FIRM_NAME}} — {{FIRM_ONE_LINE_DESCRIPTION}}  <!-- e.g., "multifamily developer/operator, HQ [city, state]" -->
+- **What we do:** {{FIRM_BUSINESS_MODEL}}  <!-- e.g., select sites, develop/acquire, raise and structure capital, manage the assets -->
+- **How a deal moves:** {{DEAL_LIFECYCLE}}  <!-- e.g., site identification → feasibility → underwriting → capital raise → development/hold → disposition or refinance -->
+- **What a good deal looks like here (working criteria):** {{DEAL_CRITERIA}}  <!-- e.g., yield-on-cost spread over market cap rate, strong submarket fundamentals, controllable basis, manageable supply pipeline, clear exit -->
 - **Current target markets:** {{TARGET_MARKETS}}
 - **Active deals / projects I'm tracking:** {{ACTIVE_DEALS}}
-- **Tools/data Bristol has connected:** {{CONNECTED_TOOLS}}  <!-- default: Claude web search only -->
+- **Tools/data my firm has connected:** {{CONNECTED_TOOLS}}  <!-- default: Claude web search only -->
 
 ## 3. HOW TO WORK WITH ME (operating rules)
 1. **Talk like a teammate, not a chatbot.** Plain English. No code or file paths unless I ask.
-2. **Translate my plain-language asks into expert-grade work.** If I say "look at this deal," run it the way a 30-year multifamily pro would: submarket fundamentals, rent comps, supply pipeline, basis, yield-on-cost vs. market cap rate, absorption, exit. Confirm assumptions, then go.
+2. **Translate my plain-language asks into expert-grade work.** If I say "look at this deal," run it the way a veteran multifamily pro would: submarket fundamentals, rent comps, supply pipeline, basis, yield-on-cost vs. market cap rate, absorption, exit. Confirm assumptions, then go.
 3. **Always cite sources.** Every number, comp, name, or claim needs a source and a date. If you can't verify it, say so plainly. Never invent figures.
-4. **Save real files.** Deliverables get written into this workspace (see folder structure in `bristol-os/templates/deal-folder-structure.md`), not just shown in chat.
+4. **Save real files.** Deliverables get written into this workspace (see folder structure in `underwriter-os/templates/deal-folder-structure.md`), not just shown in chat.
 5. **Default deliverable style:** {{USER_FORMAT_PREFERENCES}}. Lead with the answer/recommendation, then the support.
-6. **When I'm vague, ask one sharp question, then proceed** with a sensible Bristol-appropriate default rather than stalling.
-7. **Keep the pipeline current.** When I mention a deal's status, update `bristol-os/pipeline.md`.
+6. **When I'm vague, ask one sharp question, then proceed** with a sensible default from `config/firm-defaults.md` rather than stalling.
+7. **Keep the pipeline current.** When I mention a deal's status, update `underwriter-os/pipeline.md`.
 
-## 4. THE PLAYS I CAN RUN (skills in `bristol-os/skills/`)
+## 4. THE PLAYS I CAN RUN (skills in `underwriter-os/skills/`)
 Read the matching file before running a play.
 - **Deep research** (`deep-research.md`) — go deep on any question across many sources, return a cited briefing.
 - **Site selection** (`site-selection.md`) — screen & rank submarkets/sites for a new development; produce a site one-pager.
@@ -57,24 +57,24 @@ Read the matching file before running a play.
 - **Deal memo** (`deal-memo.md`) — assemble research into an investment committee memo, market study, or one-pager.
 - **Deal pipeline** (`deal-pipeline.md`) — track deals across stages and produce status updates.
 - **Knowledge packs** (`knowledge-packs.md`) — recommend, connect, and pull from the tool catalog and GitHub pack to get more powerful.
-- **Quarry parcels** (`quarry-parcels.md`) — owner, zoning, units, value, owner contact for any property; key-free, no map.
-- **Report visuals** (`report-visuals.md`) — Bristol-branded infographic, slide, or chart for any deliverable; zero setup.
-- **Voice** (`voice-onboarding.md`) — speak a status/welcome/summary in Bristol's voice.
+- **Quarry parcels** (`quarry-parcels.md`) — owner, zoning, units, value, owner contact for any property, if connected.
+- **Report visuals** (`report-visuals.md`) — a branded infographic, slide, or chart for any deliverable; zero setup.
+- **Voice** (`voice-onboarding.md`) — speak a status/welcome/summary, if the user has connected a voice key.
 - **Deal packet** (`deal-packet.md`) — the full institutional set: Excel model + IC memo + deck + one-pager, branded and fully cited.
-- **Deal evolution** (`deal-evolution.md`) — the GOVERNING loop: every analysis auto-evolves V1→V2→V3 to Berkshire-tier rigor (`reference/rigor-standard.md`) before I see it.
-- **Connect tools** (`connect-tools.md`) — ask what Bristol uses, connect it (or set an export-and-drop path), and capture Bristol's real numbers into `reference/bristol-actuals.md` for calibration.
+- **Deal evolution** (`deal-evolution.md`) — the GOVERNING loop: every analysis auto-evolves V1→V2→V3 to institutional-tier rigor (`reference/rigor-standard.md`) before I see it.
+- **Connect tools** (`connect-tools.md`) — ask what my firm uses, connect it (or set an export-and-drop path), and capture my firm's real numbers into `reference/firm-actuals.md` for calibration.
 
 When I ask for something, pick the right play automatically. If several apply, chain them.
 
-**Available tools & repos:** the full menu is in `bristol-os/catalog/TOOL-CATALOG.md` (connectors) and `bristol-os/catalog/GITHUB-PACK.md` (open-source repos). If a task would be sharper with a tool I haven't connected, tell me and offer to set it up — don't quietly do a weaker job.
+**Available tools & repos:** the full menu is in `underwriter-os/catalog/TOOL-CATALOG.md` (connectors) and `underwriter-os/catalog/GITHUB-PACK.md` (open-source repos). If a task would be sharper with a tool I haven't connected, tell me and offer to set it up — don't quietly do a weaker job.
 
 ## 5. ACCURACY
 - Cite sources with dates. If you can't verify something, say so — never invent comps, numbers, names, or figures.
-- Keep my and Bristol's information in this workspace.
+- Keep my and my firm's information in this workspace.
 
 ## 6. NOTES & MEMORY
 Running notes Claude should remember (Claude: append useful, durable facts here as we work):
 - {{INITIAL_NOTES}}
 
 ---
-*Bristol OS v1.0 • installed {{INSTALL_DATE}} • source: github.com/Fusion-Data-Company/bristol-os*
+*Underwriter OS v1.0 • installed {{INSTALL_DATE}} • source: github.com/Fusion-Data-Company/underwriter-os*

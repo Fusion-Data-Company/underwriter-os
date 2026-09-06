@@ -17,7 +17,7 @@
 | Units | {{UNITS}} |
 | Total basis | {{BASIS}} (per unit: {{BASIS_PER_UNIT}}) |
 | Business plan | {{BUSINESS_PLAN}} |
-| Key return metrics | {{RETURNS}} *(per Bristol underwriting)* |
+| Key return metrics | {{RETURNS}} *(per {{FIRM_NAME}} underwriting)* |
 
 ## 3. Market
 {{MARKET_SUMMARY}}
@@ -58,4 +58,4 @@
 - Comp table, market study, sources (with dates).
 
 ---
-*Analysis to inform a Bristol decision. Returns per Bristol underwriting. Not legal/tax/securities advice.*
+*Analysis to inform a firm decision. Returns per {{FIRM_NAME}} underwriting. Not legal/tax/securities advice.*

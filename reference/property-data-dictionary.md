@@ -1,6 +1,6 @@
 # Property / Parcel Data Dictionary — Reference
 
-**Scope:** How Bristol OS interprets parcel and property records (as returned by the **Quarry** engine) and turns a raw parcel into a development/acquisition thesis. Focus: ground-up Class A multifamily and value-add in the U.S. Southeast.
+**Scope:** How Underwriter OS interprets parcel and property records (as returned by the **Quarry** engine) and turns a raw parcel into a development/acquisition thesis. Focus: ground-up Class A multifamily and value-add in the U.S. Southeast.
 
 This document defines **every field Quarry returns**, how to read it for development/acquisition, the gotchas, and then how to go from a single parcel to a pursuit decision — including owner/entity research and the additional third-party data to pull.
 

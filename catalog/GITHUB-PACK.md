@@ -1,17 +1,17 @@
-# Bristol OS — GitHub Pack (repos Claude pulls from)
+# Underwriter OS — GitHub Pack (repos Claude pulls from)
 
-Curated, **verified** public GitHub repos that extend Claude for Bristol. Every repo below was confirmed to exist via the GitHub API on **2026-06-22** (HTTP 200), with live star counts and last-push dates. Archived repos are flagged.
+Curated, **verified** public GitHub repos that extend Claude for institutional real-estate teams. Every repo below was confirmed to exist via the GitHub API on **2026-06-22** (HTTP 200), with live star counts and last-push dates. Archived repos are flagged.
 
 ## Two ways Claude uses these
 1. **Knowledge / skills repos** — Claude can read or `git clone` these into a local `knowledge/` folder to learn patterns, reuse skills (e.g., Anthropic's document skills), and discover new connectors. No service account needed.
-2. **MCP servers** — installable tools. A technical person (Rob or a helper) runs/adds them once; then they appear to Claude like any connector. Many target real estate data Claude can't otherwise reach.
+2. **MCP servers** — installable tools. A technical person (an IT teammate or a helper) runs/adds them once; then they appear to Claude like any connector. Many target real estate data Claude can't otherwise reach.
 
-> **Who sets these up:** Knowledge repos = safe for anyone (Claude just reads them). MCP servers = technical setup; queue these for Rob, not for first-time basic users.
+> **Who sets these up:** Knowledge repos = safe for anyone (Claude just reads them). MCP servers = technical setup; queue these for a technical teammate, not for first-time basic users.
 
 ---
 
 ## 1. MCP directories & official servers — *knowledge repos*
-| Repo | ⭐ | Updated | What Bristol gets |
+| Repo | ⭐ | Updated | What you get |
 |---|--:|---|---|
 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | 87,554 | 2026-06-17 | Official + community MCP index — the trust anchor for sourcing any connector |
 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | 89,596 | 2026-06-19 | Largest, freshest MCP directory — discover any future tool |
@@ -19,13 +19,13 @@ Curated, **verified** public GitHub repos that extend Claude for Bristol. Every 
 | [wong2/awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) | 4,179 | 2026-06-13 | Cleaner opinionated shortlist |
 
 ## 2. Claude skills & CLAUDE.md patterns — *knowledge/skills repos*
-| Repo | ⭐ | Updated | What Bristol gets |
+| Repo | ⭐ | Updated | What you get |
 |---|--:|---|---|
 | [anthropics/skills](https://github.com/anthropics/skills) | 153,848 | 2026-06-09 | **Anthropic's official Agent Skills** incl. reference docx/xlsx/pptx/pdf skills — the cleanest path to polished memos/models |
 | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | 65,521 | 2026-05-22 | Huge curated skills/workflow collection |
 | [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | 47,045 | 2026-04-27 | Canonical list of skills, hooks, slash-commands, CLAUDE.md patterns |
 | [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | 13,644 | 2026-04-28 | Curated Claude Skills directory with install guidance |
-| [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) | 2,145 | 2026-05-12 | Toolkit + a SKILL.md linter for authoring Bristol's own skills |
+| [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) | 2,145 | 2026-05-12 | Toolkit + a SKILL.md linter for authoring your firm's own skills |
 
 ## 3. Real estate / property / demographics — *MCP servers (technical setup)*
 | Repo | ⭐ | Updated | Notes |
@@ -33,7 +33,7 @@ Curated, **verified** public GitHub repos that extend Claude for Bristol. Every 
 | [uscensusbureau/us-census-bureau-data-api-mcp](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp) | 80 | 2026-03-13 | **OFFICIAL U.S. Census MCP** — ACS demographics, income, rent, housing by tract/ZIP. Free (Census key). Core site-selection data. |
 | [agentic-ops/real-estate-mcp](https://github.com/agentic-ops/real-estate-mcp) | 41 | 2025-10-13 | Reference RE MCP (listings, market analysis) — good self-host base; sample data |
 | [sap156/zillow-mcp-server](https://github.com/sap156/zillow-mcp-server) | 45 | 2025-05-08 | Property search + Zestimates (RapidAPI key). Quick comps. Mind Zillow ToS |
-| [nkbud/mcp-server-attom](https://github.com/nkbud/mcp-server-attom) | 2 | 2025-07-20 | ATTOM property data (parcels, AVM, sales hist). Low adoption — fork & self-host if Bristol licenses ATTOM |
+| [nkbud/mcp-server-attom](https://github.com/nkbud/mcp-server-attom) | 2 | 2025-07-20 | ATTOM property data (parcels, AVM, sales hist). Low adoption — fork & self-host if your firm licenses ATTOM |
 | [robcerda/rentcast-mcp-server](https://github.com/robcerda/rentcast-mcp-server) | 1 | 2025-07-01 | RentCast AVMs/rent comps. Near-zero stars — vet before relying |
 
 > **Honest read:** the property/parcel MCP space is still early. The **official Census server** is the only high-confidence pick; the Zillow/ATTOM/RentCast wrappers are low-star and best treated as fork-and-self-host reference code. For licensed pro data, **Yardi Matrix (first-party connector)** beats all of these.
@@ -76,12 +76,12 @@ Curated, **verified** public GitHub repos that extend Claude for Bristol. Every 
 |---|--:|---|---|
 | [soxoj/awesome-osint-mcp-servers](https://github.com/soxoj/awesome-osint-mcp-servers) | 257 | 2026-06-15 | Vetting catalog of OSINT/business-intel MCPs (OpenCorporates/SEC/RDAP-based). Use for **entity/LLC ownership** research from public sources. |
 
-> For owner/entity research: SEC EDGAR (§5), Yardi `search_by_owner`, county records, the public-records servers indexed above, and Bristol's own Quarry engine.
+> For owner/entity research: SEC EDGAR (§5), Yardi `search_by_owner`, county records, the public-records servers indexed above, and your firm's own connected parcel data source (e.g. Quarry).
 
 ---
 
-## The "full real estate power setup" (for Rob / a technical helper)
-Install these MCP servers to max out Bristol OS beyond first-party connectors:
+## The "full real estate power setup" (for a technical helper)
+Install these MCP servers to max out Underwriter OS beyond first-party connectors:
 1. **Census MCP** (free) — demographics/rents/incomes for every market.
 2. **SEC EDGAR MCP** (free) — REIT/competitor/lender financials + entity research.
 3. **FRED MCP** (free) — interest rates, CPI, housing starts for underwriting.
@@ -89,6 +89,6 @@ Install these MCP servers to max out Bristol OS beyond first-party connectors:
 5. **Firecrawl MCP** (paid key) — scrape broker & city-planning sites for comps and pipeline.
 6. **Omnisearch MCP** (paid keys) — one front door to Tavily/Exa/Brave/Firecrawl.
 
-Each repo's README has setup steps. Bristol OS's `knowledge-packs` skill walks Claude through recommending and (where the user has the access) installing these.
+Each repo's README has setup steps. Underwriter OS's `knowledge-packs` skill walks Claude through recommending and (where the user has the access) installing these.
 
 *Every repo verified 2026-06-22. Re-check before install; open-source projects change.*

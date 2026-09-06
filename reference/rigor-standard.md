@@ -1,4 +1,4 @@
-# Bristol OS — Rigor Standard (institutional / Berkshire-tier)
+# Underwriter OS — Rigor Standard (institutional / Berkshire-tier)
 
 The audience operates at the top of the industry. Assume fluency; lead with judgment. Every analysis must carry these metrics and pass these checks — in V1, and tightened through V3 (see `deal-evolution`). This is the difference between "looks sophisticated" and "is."
 
@@ -33,11 +33,11 @@ The audience operates at the top of the industry. Assume fluency; lead with judg
 - Break-even occupancy and break-even rent. Identify the 2–3 variables the deal is most sensitive to.
 
 ## Local accuracy (non-negotiable — they will catch you)
-- Get the **jurisdiction, submarket, corridor, school zone, zoning, and entitlement status exactly right.** For Franklin/Williamson: verify against primary sources (city planning/HZC, county assessor, the developer's own filings). A wrong school district or mislabeled submarket destroys credibility instantly.
+- Get the **jurisdiction, submarket, corridor, school zone, zoning, and entitlement status exactly right.** For any specific submarket: verify against primary sources (city planning, county assessor, the developer's own filings). A wrong school district or mislabeled submarket destroys credibility instantly.
 - Verify any third-party project/owner attribution before stating it (e.g., confirm a project is the one you think it is — don't conflate two Franklin developments).
 
 ## Honesty & sourcing (the trust layer)
-- Every figure: **sourced fact `[S#]`**, **labeled estimate**, or **"per Bristol underwriting."** Never present an estimate as fact.
+- Every figure: **sourced fact `[S#]`**, **labeled estimate**, or **"per [Firm] underwriting."** Never present an estimate as fact.
 - Confirm material figures across **2+ independent sources**; flag single-source items.
 - Reconcile every number across the model, memo, deck, and one-pager. Every `[S#]` resolves to a real URL in `sources.md`.
 - State assumptions explicitly with their basis. Where data is thin, say so and give a range — don't fabricate precision.

@@ -1,9 +1,9 @@
-# Contributing to Bristol OS
+# Contributing to Underwriter OS
 
-Bristol OS is a set of Markdown skills + templates + references that Claude reads. No build step — edits to the repo flow to users on their next install/update.
+Underwriter OS is a set of Markdown skills + templates + references that Claude reads. No build step — edits to the repo flow to users on their next install/update.
 
 ## Add or change a skill
-1. Create `plugins/bristol-os/skills/<name>/SKILL.md` with YAML frontmatter:
+1. Create `plugins/underwriter-os/skills/<name>/SKILL.md` with YAML frontmatter:
    ```yaml
    ---
    name: <kebab-name>
@@ -22,7 +22,7 @@ Bristol OS is a set of Markdown skills + templates + references that Claude read
 - **Do it for them** — skills should perform the task, not hand the user instructions.
 
 ## Never commit secrets or PII
-- Real keys live encoded in `config/bristol-keys.b64` (intentional, low-sensitivity team keys) and decoded only on the user's machine. Never add a plaintext key, a real `.env`, a user's `CLAUDE.md`, `memory/`, or deal data. `.gitignore` enforces this — keep it that way. See [SECURITY.md](SECURITY.md).
+- This repo ships **no keys, ever** — not encoded, not plaintext. Never add a real `.env`, a user's `CLAUDE.md`, `memory/`, or deal data, and never add any firm's or employee's real information (name, email, portfolio, numbers). `.gitignore` enforces this — keep it that way. See [SECURITY.md](SECURITY.md).
 
 ## Verify before you push
 - Confirm referenced files exist and resolve (raw URLs return 200).

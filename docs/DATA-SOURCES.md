@@ -1,15 +1,11 @@
-# Bristol OS — Data Sources (baked-in keys, ready to call)
+# Underwriter OS — Data Sources (bring your own keys)
 
-Claude: the keys are already baked in. **Load them once per session, then call any source directly.** The user never sees keys or commands — you run these and report the answer (HARD LAW).
+Claude: none of these keys ship with this repo. Each is **optional**, set up only once a user connects it (their own `config/.env`, filled from `config/.env.example`, sourced with `set -a; . config/.env; set +a`) or a first-party connector. Once a key is present, call the source directly and report the answer in plain English (HARD LAW) — never make the user read raw output or type a command themselves.
 
-```bash
-set -a; . bristol-os/keys.env; set +a   # loads QUARRY_BASE_URL, FRED_API_KEY, CENSUS_API_KEY, ALPHAVANTAGE_API_KEY, TAVILY_API_KEY, EXA_API_KEY, FIRECRAWL_API_KEY, ELEVENLABS_API_KEY, SEC_EDGAR_USER_AGENT
-```
+All call patterns below are verified working as of 2026-06-22; the variable names match `config/.env.example`.
 
-All patterns below are verified working as of 2026-06-22.
-
-## Parcels / owners — Quarry (key-free)
-Use the helper: `python bristol-os/skills/quarry-parcels/quarry_lookup.py --address "ADDRESS"` (or `--lat --lng`, `--bbox`, `--skiptrace`). Returns owner, zoning, units, value, owner contact.
+## Parcels / owners — Quarry (or an equivalent parcel data connector)
+Use the helper: `python underwriter-os/skills/quarry-parcels/quarry_lookup.py --address "ADDRESS"` (or `--lat --lng`, `--bbox`, `--skiptrace`). Returns owner, zoning, units, value, owner contact.
 
 ## Deep / cited web research — Tavily
 ```bash
@@ -47,7 +43,7 @@ curl -s "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=TICKER&a
 ```
 
 ## Speak — ElevenLabs (use the voice-onboarding helper)
-`python bristol-os/skills/voice-onboarding/generate_voice.py --text "..." --out bristol-os/audio/x.mp3`
+`python underwriter-os/skills/voice-onboarding/generate_voice.py --text "..." --out underwriter-os/audio/x.mp3`
 
 ## Notes
 - Read JSON back in plain English; cite the source + date; never invent figures.

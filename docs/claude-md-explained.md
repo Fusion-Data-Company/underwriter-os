@@ -2,14 +2,14 @@
 
 **A CLAUDE.md is a note Claude reads to itself before it talks to you.**
 
-Imagine hiring a sharp new analyst, but every morning they forgot everything about you, your company, and your deals. You'd waste the first hour re-explaining yourself. A CLAUDE.md fixes that. It's one file that sits in your Bristol workspace folder, and Claude reads it automatically at the start of every conversation in that folder. So Claude already knows:
+Imagine hiring a sharp new analyst, but every morning they forgot everything about you, your company, and your deals. You'd waste the first hour re-explaining yourself. A CLAUDE.md fixes that. It's one file that sits in your workspace folder, and Claude reads it automatically at the start of every conversation in that folder. So Claude already knows:
 
-- Who you are and your role at Bristol
+- Who you are and your role at the firm
 - What you work on and how your work is judged
-- How Bristol decides whether a deal is a yes or no
+- How your firm decides whether a deal is a yes or no
 - Your markets, your active deals, and how you like your documents
 
-You write it once (Bristol OS does this for you during setup), and from then on Claude just *knows*. No re-explaining.
+You write it once (Underwriter OS does this for you during setup), and from then on Claude just *knows*. No re-explaining.
 
 ## Why it matters
 - **Consistency** — every document comes out in your style, aimed at your audience.
@@ -22,6 +22,6 @@ You write it once (Bristol OS does this for you during setup), and from then on 
 - To see what Claude knows about you: **"what's in my CLAUDE.md?"**
 
 ## Where it lives
-In the root of your Bristol workspace folder, named exactly `CLAUDE.md`. Keep it in that folder. If you work on Bristol things, open that folder and you're good — Claude reads the brief and you're off.
+In the root of your workspace folder, named exactly `CLAUDE.md`. Keep it in that folder. If you work on your firm's deals, open that folder and you're good — Claude reads the brief and you're off.
 
 That's the whole idea: **one file that makes Claude show up already knowing you.**

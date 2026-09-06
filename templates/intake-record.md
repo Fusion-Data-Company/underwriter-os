@@ -9,7 +9,7 @@ _Created {{DATE}} · slug `{{SLUG}}` · {{EMAIL}} · this is Claude's persistent
 - **Audience for their work:** {{AUDIENCE}}
 
 ## ★ Format mode (how to deliver to this person)
-- **Mode:** {{MODE}}  <!-- BREVITY (Sam-style: one-line bottom line + number, one visual, depth only on request) · FULL DETAIL (David-style: sheets/tables, full packet, overkill is under-rated) · BALANCED -->
+- **Mode:** {{MODE}}  <!-- BREVITY (one-line bottom line + number, one visual, depth only on request) · FULL DETAIL (sheets/tables, full packet, overkill is under-rated) · BALANCED -->
 - **Default deliverable:** {{DEFAULT_DELIVERABLE}}
 - **Voice on open:** {{VOICE_PREF}}
 
@@ -23,7 +23,7 @@ _Created {{DATE}} · slug `{{SLUG}}` · {{EMAIL}} · this is Claude's persistent
 - {{DATE}} — (initial setup)
 
 ## Running log (newest first — append durable facts, each dated, cite external figures)
-- {{DATE}} — Onboarded to Bristol OS. {{INITIAL_NOTES}}
+- {{DATE}} — Onboarded to Underwriter OS. {{INITIAL_NOTES}}
 
 ---
 *Persistent memory. Append, don't overwrite. No secrets here. Backlinked from CLAUDE.md §0.*

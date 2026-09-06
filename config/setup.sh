@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# Bristol OS — Power Layer setup for Claude Desktop (macOS)
+# Underwriter OS — Power Layer setup for Claude Desktop (macOS)
 # Wires the verified MCP servers into your Claude Desktop config.
 # Only installs servers whose runtime + API key are present.
 # Safe: backs up your existing config and refuses to overwrite
@@ -13,7 +13,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ENV_FILE="$SCRIPT_DIR/.env"
 
-echo "=== Bristol OS — Power Layer setup ==="
+echo "=== Underwriter OS — Power Layer setup ==="
 
 # 1) Load keys from .env (if present)
 if [ -f "$ENV_FILE" ]; then
@@ -60,7 +60,7 @@ if on("HAS_UVX"):
 else: skipped.append("osm (needs uv/uvx)")
 
 if on("HAS_DOCKER"):
-    ua = val("SEC_EDGAR_USER_AGENT") or "Bristol Development Group (yeager@bristoldevelopment.com)"
+    ua = val("SEC_EDGAR_USER_AGENT") or "Your Firm Name (compliance@yourfirm.com)"
     servers["sec-edgar"] = {"command":"docker","args":["run","-i","--rm","-e",f"SEC_EDGAR_USER_AGENT={ua}","stefanoamorelli/sec-edgar-mcp:latest"]}
 else: skipped.append("sec-edgar (needs Docker)")
 

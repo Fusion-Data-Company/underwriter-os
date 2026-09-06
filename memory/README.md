@@ -1,9 +1,9 @@
-# Bristol OS — Persistent Memory
+# Underwriter OS — Persistent Memory
 
-This folder is Bristol OS's long-term memory. It's how Claude remembers each person and every deal **from one conversation to the next** in this workspace — not a chatbot that forgets, a teammate that builds on yesterday.
+This folder is Underwriter OS's long-term memory. It's how Claude remembers each person and every deal **from one conversation to the next** in this workspace — not a chatbot that forgets, a teammate that builds on yesterday.
 
 ## Files
-- `memory/<person-slug>.md` — one record per person (e.g., `memory/david-hanchrow.md`). Captured at onboarding from the interview, then grown over time. Holds: identity, role, **format mode** (brevity vs. full detail), markets, active deals, preferences, key people/contacts, decisions, and a **dated running log**.
+- `memory/<person-slug>.md` — one record per person (e.g., `memory/jordan-reyes.md`). Captured at onboarding from the interview, then grown over time. Holds: identity, role, **format mode** (brevity vs. full detail), markets, active deals, preferences, key people/contacts, decisions, and a **dated running log**.
 - `memory/INDEX.md` — a one-line-per-person + per-deal index so Claude can orient fast and CLAUDE.md can backlink to everything.
 
 ## How Claude uses it (every session)

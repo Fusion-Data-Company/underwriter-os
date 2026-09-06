@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="Helvetica, Arial, sans-serif">
-  <!-- Bristol OS deal-snapshot infographic. Claude: replace {{...}} with real, sourced figures. 16:9 so it doubles as a slide. -->
+  <!-- Underwriter OS deal-snapshot infographic. Claude: replace {{...}} with real, sourced figures. 16:9 so it doubles as a slide. -->
   <rect width="1200" height="675" fill="#f4f1ea"/>
   <rect width="1200" height="120" fill="#0f2233"/>
   <rect y="120" width="1200" height="6" fill="#c8a14a"/>
-  <text x="56" y="56" fill="#ffffff" font-size="30" font-weight="700" letter-spacing="1">BRISTOL DEVELOPMENT GROUP</text>
+  <text x="56" y="56" fill="#ffffff" font-size="30" font-weight="700" letter-spacing="1">{{FIRM_NAME}}</text>
   <text x="56" y="94" fill="#c8a14a" font-size="20" font-weight="600">{{DEAL_NAME}} — Deal Snapshot</text>
   <text x="1144" y="74" text-anchor="end" fill="#9fb2c2" font-size="16">{{LOCATION}}</text>
 
@@ -39,5 +39,5 @@
   <text x="1011" y="470" text-anchor="middle" fill="#ffffff" font-size="44" font-weight="700">{{REC}}</text>
   <text x="1011" y="520" text-anchor="middle" fill="#9fb2c2" font-size="15">{{REC_SUB}}</text>
 
-  <text x="56" y="650" fill="#8a8a8a" font-size="13">Bristol OS · {{DATE}} · Figures per Bristol underwriting / sourced where noted.</text>
+  <text x="56" y="650" fill="#8a8a8a" font-size="13">Underwriter OS · {{DATE}} · Figures per {{FIRM_NAME}} underwriting / sourced where noted.</text>
 </svg>

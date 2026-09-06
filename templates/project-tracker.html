@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bristol Development — Deal Tracker</title>
+<title>Deal Tracker</title>
 <style>
   :root{--navy:#0f2233;--navy2:#1b3a57;--gold:#c8a14a;--ink:#0d1b26;--bg:#f4f1ea;--card:#fff;--mut:#5d6b76;}
   *{box-sizing:border-box;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
@@ -37,7 +37,7 @@
 </head>
 <body>
 <header>
-  <div><h1>BRISTOL DEVELOPMENT <span class="g">— Deal Tracker</span></h1><div class="sub">Live board · saved automatically on this computer</div></div>
+  <div><h1>DEAL <span class="g">TRACKER</span></h1><div class="sub">Live board · saved automatically on this computer</div></div>
   <div><button class="btn" onclick="openNew()">+ Add deal</button></div>
 </header>
 <div class="board" id="board"></div>
@@ -63,7 +63,7 @@
 
 <script>
 const STAGES=["Sourced","Screening","Underwriting","IC / Approval","Capital Raise","Closing","Development","Lease-up","Stabilized"];
-const KEY="bristolDeals";
+const KEY="underwriterOsDeals";
 const dlg=document.getElementById('dlg');
 let deals=load();
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
@@ -87,14 +87,14 @@ function render(){
     });
     col.appendChild(c);b.appendChild(col);
   });
-  document.getElementById('foot').textContent=`${deals.length} deal(s) · Bristol OS`;
+  document.getElementById('foot').textContent=`${deals.length} deal(s) · Underwriter OS`;
 }
 function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
 function openNew(){stageSel();document.getElementById('dtitle').textContent='Add deal';document.getElementById('form').reset();document.getElementById('f_id').value='';document.getElementById('delBtn').style.display='none';dlg.showModal()}
 function openEdit(id){const d=deals.find(x=>x.id===id);if(!d)return;stageSel();document.getElementById('dtitle').textContent='Edit deal';document.getElementById('f_id').value=d.id;f_name.value=d.name;f_loc.value=d.loc||'';f_units.value=d.units||'';f_stage.value=d.stage;f_next.value=d.next||'';f_notes.value=d.notes||'';document.getElementById('delBtn').style.display='inline';dlg.showModal()}
 function saveDeal(e){e.preventDefault();const id=document.getElementById('f_id').value;const o={id:id||uid(),name:f_name.value.trim(),loc:f_loc.value.trim(),units:f_units.value.trim(),stage:f_stage.value,next:f_next.value.trim(),notes:f_notes.value.trim()};if(!o.name)return;if(id){deals=deals.map(d=>d.id===id?o:d)}else{deals.push(o)}save();render();dlg.close()}
 function delDeal(){const id=document.getElementById('f_id').value;if(id&&confirm('Delete this deal?')){deals=deals.filter(d=>d.id!==id);save();render();dlg.close()}}
-if(!deals.length){deals=[{id:uid(),name:"Sample: Franklin TN site",loc:"Williamson County",units:"260",stage:"Screening",next:"Pull parcel owner + market read",notes:"Delete me — your real deals go here."}];save()}
+if(!deals.length){deals=[{id:uid(),name:"Sample: 123 Main St site",loc:"Example County",units:"260",stage:"Screening",next:"Pull parcel owner + market read",notes:"Delete me — your real deals go here."}];save()}
 render();
 </script>
 </body>

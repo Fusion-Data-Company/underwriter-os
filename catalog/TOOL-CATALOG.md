@@ -1,11 +1,11 @@
-# Bristol OS — Tool Catalog (connectors, configured)
+# Underwriter OS — Tool Catalog (connectors, configured)
 
-The complete, prioritized set of tools that power Bristol OS. Everything here is real and verified as of June 2026. Two kinds of tools:
+The complete, prioritized set of tools that power Underwriter OS. Everything here is real and verified as of June 2026. Two kinds of tools:
 
-- **First-party Claude connectors** — added in the desktop app under **Settings → Connectors**, log in once, done. Safe for any Bristol user.
-- **Community MCP servers** — open-source tools from GitHub (see `GITHUB-PACK.md`). More powerful for real estate, but they need a technical person (Rob, or a helper) to set up once. NOT for first-time basic users.
+- **First-party Claude connectors** — added in the desktop app under **Settings → Connectors**, log in once, done. Safe for any user at your firm.
+- **Community MCP servers** — open-source tools from GitHub (see `GITHUB-PACK.md`). More powerful for real estate, but they need a technical person (an IT teammate, or a helper) to set up once. NOT for first-time basic users.
 
-> **The golden rule for basic users (Sam, David, staff):** you only ever need **Tier 0** and the one-click connectors in **Tier 1**. Everything below that is optional power you can add later.
+> **The golden rule for basic users (non-technical staff):** you only ever need **Tier 0** and the one-click connectors in **Tier 1**. Everything below that is optional power you can add later.
 
 ---
 
@@ -15,31 +15,31 @@ The complete, prioritized set of tools that power Bristol OS. Everything here is
 | **Claude web search** (built in) | Live web research, no account | every play, esp. deep-research |
 | **Anthropic document skills** (docx/xlsx/pptx/pdf) | Produce real Word/Excel/PowerPoint/PDF deliverables | deal-memo, market study |
 
-This alone runs all seven Bristol OS plays. Start here.
+This alone runs all seven Underwriter OS plays. Start here.
 
 ---
 
 ## TIER 1 — Free / free-tier, one-click, high impact (recommended for everyone)
-| Connector | What it does for Bristol | Cost | Powers |
+| Connector | What it does for your firm | Cost | Powers |
 |---|---|---|---|
 | **Tavily** | Deep, source-cited web research built for AI | Free tier | deep-research, market-comp, underwriting |
 | **Exa** | Neural web search — finds niche sources, competitors, submarket intel | Free tier | deep-research, site-selection, investor-sourcing |
-| **Google Drive** | Read/where Bristol's docs live; save deliverables | Free w/ Google | deal-memo, all |
+| **Google Drive** | Read/write where your firm's docs live; save deliverables | Free w/ Google | deal-memo, all |
 | **Gmail** | Pull/draft deal correspondence, investor outreach context | Free w/ Google | investor-sourcing, pipeline |
 | **Google Calendar** | Deadlines, IC meetings, site-visit scheduling | Free w/ Google | deal-pipeline |
 | **Slack** | Team updates, pipeline summaries posted to channels | Free tier | deal-pipeline |
-| **Notion** | If Bristol keeps notes/wikis there — read/write deal knowledge | Free tier | all |
+| **Notion** | If your firm keeps notes/wikis there — read/write deal knowledge | Free tier | all |
 
 **How to connect any of these:** Claude desktop → **Settings → Connectors** → find it → **Connect** → sign in once.
 
 ---
 
-## TIER 2 — Paid power-ups (connect the ones Bristol already pays for)
+## TIER 2 — Paid power-ups (connect the ones your firm already pays for)
 
 ### Real estate data (the big one)
 | Connector | What it does | Notes |
 |---|---|---|
-| **Yardi Matrix** | Multifamily market intelligence: property search, rents, supply pipeline, **owner lookup** (`search_by_owner`) | First-party Claude connector. THE pick if Bristol subscribes. Powers site-selection, market-comp, investor/owner sourcing |
+| **Yardi Matrix** | Multifamily market intelligence: property search, rents, supply pipeline, **owner lookup** (`search_by_owner`) | First-party Claude connector. THE pick if your firm subscribes. Powers site-selection, market-comp, investor/owner sourcing |
 | *(community MCPs: Census, Zillow, ATTOM, RentCast, Maps — see `GITHUB-PACK.md` §real-estate)* | Demographics, comps, parcel/AVM, geocoding | Need technical setup; great free/low-cost data |
 
 ### Finance & market data
@@ -66,9 +66,9 @@ This alone runs all seven Bristol OS plays. Start here.
 | **Sumble** | Deep research on accounts, people, tech | Background on a partner |
 | **Phoenix by HG Insights** | B2B firmographic/technographic data | Company intel |
 
-> These cover capital-partner, company, owner, and contact research. For property-owner lookup and contact, Bristol OS also uses its own Quarry engine (`quarry-parcels`).
+> These cover capital-partner, company, owner, and contact research. For property-owner lookup and contact, Underwriter OS also uses its own Quarry engine (`quarry-parcels`).
 
-### Documents, CRM, ops (connect what Bristol uses)
+### Documents, CRM, ops (connect what your firm uses)
 | Connector | What it does | Category |
 |---|---|---|
 | **HubSpot** | CRM — investors, deals, contacts | CRM |
@@ -85,7 +85,7 @@ This alone runs all seven Bristol OS plays. Start here.
 
 ---
 
-## Which connector powers which Bristol play
+## Which connector powers which play
 | Play | Tier 0 (always) | Best upgrades |
 |---|---|---|
 | **deep-research** | web search | Tavily, Exa |
@@ -101,9 +101,9 @@ This alone runs all seven Bristol OS plays. Start here.
 ## Setup priority (do in this order)
 1. **Tier 0** — already on. Confirm web search works.
 2. **Tavily + Exa** — 5 minutes, free, biggest research jump.
-3. **Google Drive + Gmail + Calendar** — if Bristol is on Google Workspace.
-4. **Yardi Matrix** — if Bristol subscribes (huge for RE).
+3. **Google Drive + Gmail + Calendar** — if your firm is on Google Workspace.
+4. **Yardi Matrix** — if your firm subscribes (huge for RE).
 5. **One investor-research tool** (Apollo or CB Insights) when a raise is active.
-6. **Community MCP servers** (Census/SEC/FRED/Maps) — have Rob or a technical helper set these up from `GITHUB-PACK.md`; they're free and powerful but not a basic-user task.
+6. **Community MCP servers** (Census/SEC/FRED/Maps) — have a technical teammate set these up from `GITHUB-PACK.md`; they're free and powerful but not a basic-user task.
 
 *All connector availability/names current as of June 2026. Verify in Settings → Connectors, which is the live source of truth.*

@@ -1,12 +1,12 @@
 # Multifamily Underwriting Model — Reference
 
-**Scope:** Ground-up Class A multifamily development and value-add acquisitions in the U.S. Southeast (Bristol Development Group). This document is the canonical underwriting reference for Bristol OS. It defines every metric used in a deal, the exact formula, why it matters, the typical drivers, and **where to source each input live**.
+**Scope:** Ground-up Class A multifamily development and value-add acquisitions — adapt scope/geography to your firm. This document is the canonical underwriting reference for Underwriter OS. It defines every metric used in a deal, the exact formula, why it matters, the typical drivers, and **where to source each input live**.
 
 ---
 
 ## 0. How to use this document (and the citation standard)
 
-Bristol OS pulls **live** data. Do **not** treat any dollar figure, rate, or cap rate in this document as a current fact — illustrative ranges are labeled **"illustrative — verify live."** Every input must be sourced at run time.
+Underwriter OS pulls **live** data. Do **not** treat any dollar figure, rate, or cap rate in this document as a current fact — illustrative ranges are labeled **"illustrative — verify live."** Every input must be sourced at run time.
 
 **Citation standard (non-negotiable).** Every figure in any deliverable — a number in a memo, a cell in a model, a line in a table — must carry:
 1. **Source** (e.g., "Yardi Matrix," "FRED series DGS10," "Davidson County Assessor," "CBRE Cap Rate Survey H2," "contractor GMP bid 2026-05-14").
@@ -198,7 +198,7 @@ Total stabilized OpEx for Class A commonly runs a meaningful share of EGI, with 
 - **Definition:** Property cash flow from operations before debt service, capital expenditures, income taxes, and depreciation.
 - **Formula:** `NOI = EGI – Total Operating Expenses` (OpEx **excludes** debt service, capex, reserves-above-line treatment varies, and non-operating items).
 - **Why it matters:** The single most important operating number — it drives value (NOI ÷ cap rate), debt sizing (debt yield, DSCR), and yield-on-cost.
-- **Conventions:** Be explicit whether **reserves**, **management fee**, and **non-recurring items** are above or below the NOI line — inconsistency here is the most common source of bad comps. Bristol convention: management fee and reserves **above** the line (in OpEx) for a conservative, financeable NOI; document any deviation.
+- **Conventions:** Be explicit whether **reserves**, **management fee**, and **non-recurring items** are above or below the NOI line — inconsistency here is the most common source of bad comps. Common convention: management fee and reserves **above** the line (in OpEx) for a conservative, financeable NOI; document any deviation.
 - **Source live:** Built from §1 and §2 — every component cited.
 
 ### 3.2 Expense ratio (OpEx ratio)
@@ -278,7 +278,7 @@ Total Project Cost (TPC) = Land + Hard Costs + Soft Costs (+ Financing + Reserve
 - **Definition:** Yield-on-cost minus the market exit cap rate — the reward for taking development risk (you build to a yield above where stabilized assets trade).
 - **Formula:** `Spread = Yield-on-Cost – Exit Cap Rate` (in basis points).
 - **Why it matters:** The single cleanest development go/no-go. A thin spread means you are not being paid for construction, lease-up, and market risk. The required spread widens when costs/rates are volatile.
-- **Convention:** Bristol targets a healthy positive spread of stabilized development yield over the prevailing exit cap; the **required** spread should be set to current market risk conditions, not a fixed number. *Illustrative — verify live.*
+- **Convention:** A disciplined sponsor targets a healthy positive spread of stabilized development yield over the prevailing exit cap; the **required** spread should be set to current market risk conditions, not a fixed number. *Illustrative — verify live.*
 - **Source live:** Exit cap from CBRE/JLL/RCA cap-rate surveys + broker BOVs for the specific submarket/vintage, dated; YoC from §5.1.
 
 ### 5.3 Stabilized value & profit
@@ -403,7 +403,7 @@ Order of priority (lowest cost/lowest risk at the bottom of the stack, paid firs
 ### 7.3 Equity — LP / GP
 
 - **LP (limited partner) equity:** Majority of the equity (institutional/fund/HNW); passive; receives a **preferred return** and the majority of cash flow until the promote tiers.
-- **GP / Sponsor (Bristol) equity:** Co-invest ("skin in the game"); earns the **promote/carried interest** for performance, plus fees (acquisition/development/asset-management).
+- **GP / Sponsor equity:** Co-invest ("skin in the game"); earns the **promote/carried interest** for performance, plus fees (acquisition/development/asset-management).
 - **Source live:** JV/operating agreement; market co-invest and promote norms.
 
 ### 7.4 Preferred return & the promote/waterfall
@@ -467,7 +467,7 @@ For each deal, populate this matrix; every risk gets an owner, a mitigant, and a
 
 ## 10. Model tab structure (Excel underwriting model outline)
 
-A disciplined Bristol underwriting model should contain these tabs/sections, in this order. Inputs flow left-to-right; nothing hardcoded downstream of an input cell.
+A disciplined underwriting model should contain these tabs/sections, in this order. Inputs flow left-to-right; nothing hardcoded downstream of an input cell.
 
 1. **Cover / Summary (one-page IC output)** — deal name, location, unit count, key metrics dashboard (untrended & trended YoC, spread, levered/unlevered IRR, equity multiple, stabilized CoC, profit, $/unit cost), go/no-go, **and a sources-&-dates block** (citation standard).
 2. **Assumptions / Control Panel** — every key driver in one place (rents, growth, vacancy, OpEx growth, exit cap, costs, rate, leverage, timing). Each assumption cell labeled with **source + date**. This is the only place to change inputs.

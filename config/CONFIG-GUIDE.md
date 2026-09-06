@@ -1,4 +1,4 @@
-# Bristol OS — Power Layer Config Guide (for Rob / a technical helper)
+# Underwriter OS — Power Layer Config Guide (for a technical helper)
 
 This sets up the **community MCP servers** (real estate, finance, research, maps) that go beyond Claude's one-click connectors. Basic office users do **not** do this — it's for the power rig. Every run command below was verified from each project's own README (June 2026).
 
@@ -23,7 +23,7 @@ You don't need all three — install what matches the servers you want. `npx` + 
 
 ---
 
-## The servers, configured (what each gives Bristol + nuance)
+## The servers, configured (what each gives your firm + nuance)
 
 ### Free, no key
 - **osm** (OpenStreetMap, `uvx osm-mcp-server`) — geocode site addresses, find nearby amenities, walkability/commute. Zero config. **Best free default.**
@@ -34,7 +34,7 @@ You don't need all three — install what matches the servers you want. `npx` + 
 - **alphavantage** (`uvx marketdata-mcp-server <KEY>`) — markets/rates/economic indicators. *Nuance:* the package is `marketdata-mcp-server` (not the repo name) and the **key is a positional argument**, not an env var — `setup.sh` places it correctly. Key: https://www.alphavantage.co/support/#api-key
 
 ### Free tier (sign up; paid only for heavy use)
-- **tavily** (`npx -y tavily-mcp@latest`) — deep, cited web research. *Nuance:* pre-tuned with `DEFAULT_PARAMETERS={"search_depth":"advanced","max_results":10}` for thorough Bristol research. Key: https://app.tavily.com/home
+- **tavily** (`npx -y tavily-mcp@latest`) — deep, cited web research. *Nuance:* pre-tuned with `DEFAULT_PARAMETERS={"search_depth":"advanced","max_results":10}` for thorough research. Key: https://app.tavily.com/home
 - **exa** (`npx -y exa-mcp-server`) — neural search for niche sources/competitors. (Exa also has a one-click Claude connector if you prefer that over the config.) Key: https://dashboard.exa.ai/api-keys
 - **firecrawl** (`npx -y firecrawl-mcp`) — scrape/crawl broker sites, **city permit & planning portals**, comps pages. *Nuance:* pre-set retry (5 attempts) and a 2000-credit warning so you don't burn credits silently. Key: https://www.firecrawl.dev/app/api-keys
 
@@ -82,7 +82,7 @@ Providers without keys are skipped automatically. Use this *instead of* separate
 ## Verify it worked
 1. Fully quit Claude Desktop (Cmd+Q) and reopen.
 2. Ask Claude: **"what tools do you have now?"** — the new servers should appear.
-3. Test one: *"Use OpenStreetMap to geocode 381 Mallory Station Rd, Franklin TN."*
+3. Test one: *"Use OpenStreetMap to geocode [an address you care about]."*
 
 ## Troubleshooting
 - **Server not showing:** you must fully quit (Cmd+Q), not just close the window.

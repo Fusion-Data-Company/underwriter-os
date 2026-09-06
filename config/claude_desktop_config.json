@@ -1,5 +1,5 @@
 {
-  "_comment": "Bristol OS power layer — reference Claude Desktop MCP config. Replace YOUR_* placeholders with real keys, or (better) put keys in config/.env and run config/setup.sh to merge this safely into your real config. Each server's run command is verified from its repo README (June 2026). Census + Omnisearch are clone-and-build — see CONFIG-GUIDE.md.",
+  "_comment": "Underwriter OS power layer — reference Claude Desktop MCP config. Replace YOUR_* placeholders with real keys, or (better) put keys in config/.env and run config/setup.sh to merge this safely into your real config. Each server's run command is verified from its repo README (June 2026). Census + Omnisearch are clone-and-build — see CONFIG-GUIDE.md.",
   "mcpServers": {
     "osm": {
       "command": "uvx",
@@ -9,7 +9,7 @@
       "command": "docker",
       "args": [
         "run", "-i", "--rm",
-        "-e", "SEC_EDGAR_USER_AGENT=Bristol Development Group (yeager@bristoldevelopment.com)",
+        "-e", "SEC_EDGAR_USER_AGENT=Your Firm Name (compliance@yourfirm.com)",
         "stefanoamorelli/sec-edgar-mcp:latest"
       ]
     },

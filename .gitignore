@@ -1,4 +1,4 @@
-# Bristol OS — never commit personal or deal data to the public repo.
+# Underwriter OS — never commit personal or deal data to the public repo.
 # (These are what users generate locally; keep them OFF GitHub.)
 CLAUDE.md
 pipeline.md
@@ -13,7 +13,7 @@ research/
 secrets*
 claude_desktop_config.local.json
 keys.env
-bristol-os/keys.env
+underwriter-os/keys.env
 audio/
 *.mp3
 docs/data-ethics-and-fair-housing.md

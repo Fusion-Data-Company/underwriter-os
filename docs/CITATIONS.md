@@ -1,17 +1,17 @@
-# Bristol OS — Citation & Backlinking Standard (cite EVERYTHING)
+# Underwriter OS — Citation & Backlinking Standard (cite EVERYTHING)
 
-**Rule:** every number, claim, comp, owner, rate, and date in any Bristol OS deliverable must be traceable to a source that anyone can click and verify. No exceptions. If it can't be sourced, it's labeled an estimate or omitted.
+**Rule:** every number, claim, comp, owner, rate, and date in any Underwriter OS deliverable must be traceable to a source that anyone can click and verify. No exceptions. If it can't be sourced, it's labeled an estimate or omitted.
 
 ## The three labels (every figure is one of these)
 - **Sourced fact** — has a citation `[S#]` pointing to a real, checkable source.
 - **Estimate** — Claude's reasoning; written as "est." and explained.
-- **Per Bristol underwriting** — a number from Bristol's own model; tagged that way.
+- **Per [Firm] underwriting** — a number from the firm's own model; tagged that way.
 
 ## The sources registry (the backlink target)
 Every deal folder gets a `sources.md` — the single registry every deliverable links back to. Each entry:
 
 ```
-### [S3] Williamson County Assessor — parcel 053 11714 00008053
+### [S3] [County] Assessor — parcel [APN]
 - URL: https://...           (direct link to the record/page)
 - Source type: County assessor record
 - Accessed: 2026-06-22
@@ -44,4 +44,4 @@ Name the exact path so a colleague can re-run it: `FRED series DGS10`, `Census A
 ## Hard rules
 - Never present an unsourced number as fact. Never invent a URL, owner, comp, or figure.
 - If a source can't be located, say so and mark the figure an estimate.
-- Every deliverable Bristol OS produces ends with, or links to, its sources registry — so anyone can fact-check everything.
+- Every deliverable Underwriter OS produces ends with, or links to, its sources registry — so anyone can fact-check everything.

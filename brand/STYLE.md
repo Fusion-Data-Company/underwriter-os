@@ -1,6 +1,6 @@
-# Bristol OS — Brand & Style System
+# Underwriter OS — Brand & Style System
 
-Apply this to EVERY deliverable so Bristol OS output looks like one institutional firm made it. Executive, restrained, data-dense, lots of whitespace.
+Apply this to EVERY deliverable so Underwriter OS output looks like one institutional firm made it. Executive, restrained, data-dense, lots of whitespace.
 
 ## Color
 | Token | Hex | Use |
@@ -26,7 +26,7 @@ Apply this to EVERY deliverable so Bristol OS output looks like one institutiona
 - Big numbers get the spotlight: stat values 40–46px, labels 14–16px uppercase muted.
 
 ## Wordmark
-Type wordmark (no logo file): **BRISTOL DEVELOPMENT GROUP** in navy 700, with a gold subtitle for the document type (e.g., "Investment Committee Memo"). 6px gold rule under the navy header band.
+Type wordmark (no logo file): **YOUR FIRM NAME** in navy 700, with a gold subtitle for the document type (e.g., "Investment Committee Memo"). 6px gold rule under the navy header band. Swap in the firm's real name and, if they have one, their logo.
 
 ## Layout & components
 - Generous margins; 12-col mental grid; align everything.
@@ -42,7 +42,7 @@ Type wordmark (no logo file): **BRISTOL DEVELOPMENT GROUP** in navy 700, with a 
 - Always a source line under the chart.
 
 ## Per-format styling
-- **Word (.docx):** navy H1/H2, gold H3 accents, 1" margins, 11pt body, footer with page # + "Bristol Development — Confidential" + date; sources as endnotes.
+- **Word (.docx):** navy H1/H2, gold H3 accents, 1" margins, 11pt body, footer with page # + "[Your Firm] — Confidential" + date; sources as endnotes.
 - **Excel (.xlsx):** navy header fills + white bold text; inputs in `#FFF8E1` (editable), calcs locked/grey; number formats — $ #,##0, 0.0%, 0.00x; a **Sources** tab + "Src" columns; freeze header row; tab colors navy.
 - **PowerPoint (.pptx):** navy title bar + gold rule master; one idea per slide; big number + chart; final Sources slide.
 - **PDF / SVG one-pager:** the deal-snapshot / parcel-snapshot layout; footer cites sources.
@@ -53,4 +53,4 @@ Institutional, confident, concise. Lead with the recommendation/number. No hype,
 ## Non-negotiables
 - Every figure carries a `[S#]` (see `docs/CITATIONS.md`).
 - Consistent colors/fonts across sheet + doc + slides in a packet (one firm, one look).
-- Label estimates; tag Bristol-model numbers.
+- Label estimates; tag the firm's own model numbers (e.g. "per [Firm] underwriting").

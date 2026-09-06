@@ -5,7 +5,7 @@ When you start working a deal, Claude creates a folder for it inside your worksp
 ```
 <your workspace>/
 ├── CLAUDE.md                      ← your permanent brief (don't move)
-├── bristol-os/                    ← the system (skills, templates, docs)
+├── underwriter-os/                    ← the system (skills, templates, docs)
 ├── pipeline.md                    ← your deal tracker
 └── deals/
     └── <deal-name>/
