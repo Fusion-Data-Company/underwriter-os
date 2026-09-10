@@ -1,6 +1,6 @@
 # Underwriter public product page
 
-Standalone static HTML/CSS. No runtime dependencies, analytics, provider requests or checkout.
+Static public product page plus the optional authenticated configuration engagement service. See CONFIGURATION-SERVICE.md for its Node API, database, payment and private delivery setup. The free MIT download remains public.
 
 Preview from the repository root:
 
@@ -16,7 +16,7 @@ python3 web/build_download.py
 
 This invokes the canonical `scripts/create_workspace.py` in a temporary directory, using the explicitly unconfigured identity `Your firm - unconfigured starter`. Its tracked-source allowlist governs the package; no customer deal is created. The resulting ZIP, SHA-256 and source revision are written to `web/downloads/`. Commit changed source before rebuilding, as required by the canonical creator. The public package is MIT licensed, with optional configuration services kept separate. No standalone subscription or exclusivity claims are made.
 
-The source repository's service section is the service inquiry destination. The page does not create payment links or reproduce unverified pricing.
+The service inquiry destination is configuration.html. It accepts no public price: operators must publish actual scoped quotes before customers can accept and pay.
 
 ## Generated assets
 

@@ -1,0 +1,1 @@
+{"name":"underwriter-configuration-service","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node scripts/check-service.mjs","db:migrate":"node scripts/migrate-service.mjs","deliver":"node scripts/deliver-service.mjs"},"dependencies":{"@clerk/backend":"^3.17.2","@neondatabase/serverless":"^1.1.0","@vercel/blob":"^2.8.0","stripe":"^22.6.2","zod":"^4.1.12"}}

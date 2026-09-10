@@ -17,3 +17,8 @@ underwriter-os/keys.env
 audio/
 *.mp3
 docs/data-ethics-and-fair-housing.md
+
+node_modules/
+.vercel/
+__pycache__/
+*.pyc
