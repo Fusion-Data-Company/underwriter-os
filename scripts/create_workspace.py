@@ -9,7 +9,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOTS = {'onboarding', 'reference', 'templates', 'plugins', 'docs', 'brand', 'catalog', 'memory'}
-FILES = {'LICENSE', 'SECURITY.md', 'WALKTHROUGH.md', 'START-HERE.md', 'INSTALL.md'}
+FILES = {'LICENSE', 'SECURITY.md', 'WALKTHROUGH.md', 'START-HERE.md', 'INSTALL.md', 'scripts/deal_workspace.py'}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
