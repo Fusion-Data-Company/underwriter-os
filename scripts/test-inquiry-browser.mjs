@@ -8,8 +8,8 @@ try {
  for(const scenario of ['success','retry','refresh-failure','validation','html-error']) {
   const page=await browser.newPage({viewport:{width:390,height:844}});let posts=[],records=[],listCalls=0;
   await page.addInitScript(()=>{window.Clerk={user:{id:'fixture'},session:{getToken:async()=>'fixture'},load:async()=>{},mountUserButton:()=>{}}});
-  await page.route('**/configuration.html',async r=>r.fulfill({contentType:'text/html',body:await readFile('web/configuration.html','utf8')}));
-  await page.route('**/configuration.js',async r=>r.fulfill({contentType:'text/javascript',body:await readFile('web/configuration.js','utf8')}));
+  if(!process.env.TEST_LIVE_ASSETS) await page.route('**/configuration.html',async r=>r.fulfill({contentType:'text/html',body:await readFile('web/configuration.html','utf8')}));
+  if(!process.env.TEST_LIVE_ASSETS) await page.route('**/configuration.js',async r=>r.fulfill({contentType:'text/javascript',body:await readFile('web/configuration.js','utf8')}));
   await page.route('https://clerk.example.test/**',r=>r.fulfill({body:'',contentType:'text/javascript'}));
   await page.route('**/api/configuration/**',route=>{const action=new URL(route.request().url()).pathname.split('/').pop();
    if(action==='config')return route.fulfill({json:{publishableKey:'pk_test_'+Buffer.from('clerk.example.test$').toString('base64')}});
