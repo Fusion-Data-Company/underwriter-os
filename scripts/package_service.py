@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Package an operator-reviewed firm workspace. Does not configure or approve it."""
-import argparse, hashlib, json, re, zipfile
+import argparse, hashlib, io, json, re, zipfile
 from pathlib import Path
 
 def main():
@@ -33,9 +33,15 @@ def main():
     if 'SERVICE-HANDOFF.json' not in seen:selected.append(('SERVICE-HANDOFF.json',(root/'SERVICE-HANDOFF.json').read_bytes()))
     selected.append(('DELIVERY-MANIFEST.json',(root/'DELIVERY-MANIFEST.json').read_bytes()))
     if sum(len(data) for _,data in selected)>15000000:p.error('Delivery exceeds the bounded 15 MB source limit')
-    with zipfile.ZipFile(out,'x',zipfile.ZIP_DEFLATED) as archive:
-        for name,data in selected:archive.writestr('underwriter-firm/'+name,data)
-    data=out.read_bytes()
+    buffer=io.BytesIO()
+    with zipfile.ZipFile(buffer,'w',zipfile.ZIP_DEFLATED) as archive:
+        for name,data in sorted(selected):
+            info=zipfile.ZipInfo('underwriter-firm/'+name,date_time=(1980,1,1,0,0,0))
+            info.compress_type=zipfile.ZIP_DEFLATED
+            info.external_attr=0o100644 << 16
+            archive.writestr(info,data)
+    data=buffer.getvalue()
     if len(data)>4000000:p.error('Archive exceeds the hosted download limit; use a separately scoped delivery')
+    with out.open('xb') as stream:stream.write(data)
     print(json.dumps({'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'deliveryNote':handoff['completedScope'],'sourceCommit':manifest['source_commit']}))
 if __name__=='__main__':main()

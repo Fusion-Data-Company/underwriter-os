@@ -72,6 +72,8 @@ def main():
         return
     if not (deal / 'deal.json').is_file():
         parser.error('Create the deal before adding evidence')
+    if (deal / 'research').is_symlink() or not (deal / 'research').is_dir() or (deal / 'sources.json').is_symlink():
+        parser.error('Use a regular research directory and source registry')
     source = args.file.expanduser()
     if source.is_symlink() or not source.is_file() or source.name.startswith('.') or source.suffix.lower() in {'.env', '.pem', '.key'}:
         parser.error('Choose a regular source document, not a hidden or credential file')
@@ -93,11 +95,39 @@ def main():
         sha = digest.hexdigest()
         existing = next((entry for entry in registry if entry['sha256'] == sha), None)
         if existing:
-            print(json.dumps({'source': existing, 'already_present': True}))
+            relative = Path(existing['file'])
+            if relative.is_absolute() or '..' in relative.parts or len(relative.parts) != 2 or relative.parts[0] != 'research':
+                raise ValueError('Existing source has an invalid retained-file path')
+            retained = deal / relative
+            if retained.is_symlink() or retained.parent.is_symlink():
+                raise ValueError('Existing source path is a symlink')
+            if retained.exists():
+                check = hashlib.sha256()
+                with retained.open('rb') as stream:
+                    for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+                        check.update(chunk)
+                if check.hexdigest() != sha or retained.stat().st_size != staging.stat().st_size:
+                    raise ValueError('Existing retained bytes differ. Preserve both files for operator review; nothing was overwritten')
+            else:
+                # Restore missing bytes exclusively; never replace a file that appeared concurrently.
+                with retained.open('xb') as destination, staging.open('rb') as original:
+                    shutil.copyfileobj(original, destination)
+            browser_records = deal / 'browser-source-records.json'
+            if browser_records.is_file() and not browser_records.is_symlink():
+                linked = [item['browser_source_id'] for item in json.loads(browser_records.read_text()) if item.get('sha256') == sha and item.get('bytes') == retained.stat().st_size]
+                if linked:
+                    existing['browser_source_ids'] = sorted(set(existing.get('browser_source_ids', []) + linked))
+                    write_json(deal / 'sources.json', registry)
+            print(json.dumps({'source': existing, 'already_present': True, 'retained_bytes_confirmed': True}))
             return
         name = sha + source.suffix.lower()
         os.replace(staging, deal / 'research' / name)
         entry = {'id': 'S' + str(len(registry) + 1), 'title': args.title.strip(), 'origin': args.origin.strip(), 'source_as_of': args.as_of, 'retained_at': stamp(), 'sha256': sha, 'bytes': (deal / 'research' / name).stat().st_size, 'file': 'research/' + name, 'claims_verified': False}
+        browser_records = deal / 'browser-source-records.json'
+        if browser_records.is_file() and not browser_records.is_symlink():
+            linked = [item['browser_source_id'] for item in json.loads(browser_records.read_text()) if item.get('sha256') == sha and item.get('bytes') == entry['bytes']]
+            if linked:
+                entry['browser_source_ids'] = linked
         registry.append(entry)
         write_json(deal / 'sources.json', registry)
         print(json.dumps({'source': entry, 'already_present': False}))

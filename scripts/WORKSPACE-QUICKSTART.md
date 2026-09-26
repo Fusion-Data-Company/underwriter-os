@@ -24,3 +24,13 @@ python3 scripts/deal_workspace.py --workspace . list
 The source command stores a copy and a hash in the deal's research folder. The source registry distinguishes retention time from publication time. Capturing a document does not verify its claims. Duplicate bytes reuse the existing source record. Reusing a deal slug fails without overwriting the deal. A concurrent source import fails rather than interleaving registry writes.
 
 Unfilled templates are marked as such. Populate them with sourced research and explicit assumptions before using them in a decision. The package contains no customer data or completed underwriting analysis.
+
+## Continue a browser research workspace
+
+Export workspace JSON from the browser, then import it into a new deal folder:
+
+```sh
+python3 scripts/import_browser.py --workspace . --file /absolute/path/deal-export.json --slug imported-deal
+```
+
+The import retains the exact JSON, its hash, notes and source metadata. It never overwrites an existing deal. Browser fingerprints are not original documents: imported source records are kept separately from the retained-file registry. Use the existing source command to copy each original document. Matching SHA-256 and byte count attach its browser source IDs to the retained record. Nothing is uploaded, and neither import nor hashing verifies a document's claims.
